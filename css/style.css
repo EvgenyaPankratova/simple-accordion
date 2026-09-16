@@ -31,52 +31,40 @@ body{
     font-size: 20px;
 }
 
-.accordion__main_block details{
+.accordion__main_block_content:first-child{
+    border-top: 1px solid #D8D2C8;
+}
+
+.accordion__main_block_content{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
     border-bottom: 1px solid #D8D2C8;
     overflow: hidden;
     padding: 28px 0;
 }
 
-.accordion__main_block details:first-child{
-    border-top: 1px solid #D8D2C8;
-}
-
- summary::-webkit-details-marker {
-    display: none;
-}
-
- summary{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
- details p{
-    padding-left: 48px;
-    color:#5D564D;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-details{
-    position: relative;
-    font-weight: 500;
-    font-size: 20px;
-}
-
- details::details-content {
-    opacity: 0;
-    transform: translateY(-4px);
-    transition: opacity .4s ease, transform .4s ease;
+.accordion__main_block_content p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height .4s ease, opacity .4s ease, transform .4s ease;
+  padding-left: 48px;
+  color: #5D564D;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
   }
 
-  details[open]::details-content {
+.accordion__main_block_content_open p {
+    max-height: 800px;   
     opacity: 1;
     transform: translateY(0);
+    margin-top: 28px;
   }
 
-details summary::before {
+.accordion__main_block_content_question::before {
   content: attr(data-number);
   color: #A19A90;
   font-size: 12px;
@@ -84,8 +72,7 @@ details summary::before {
   display: inline-block;
 }
 
-details summary::after {
-  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12H19' stroke='%231F1F1F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 5V19' stroke='%231F1F1F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+.accordion__main_block_content_icon {
   font-size: 1em;
   transition: transform 0.4s ease;
   display:inline-block;
@@ -94,7 +81,7 @@ details summary::after {
   right: 0;
 }
 
-details[open] summary::after {
+.accordion__main_block_content_icon_open {
   transform: rotate(45deg);
 }
 
