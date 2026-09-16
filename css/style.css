@@ -1,0 +1,118 @@
+body{
+    max-width: 900px;
+    font-family: 'IBM', sans-serif;
+    color: #1F1F1F;
+    margin: 0;
+    font-weight: 400;
+}
+
+.accordion__text_content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 560px;
+}
+
+.accordion__theme{
+    text-transform: uppercase;
+    color:#8D867B;
+}
+
+.accordion__title{
+    margin: 0;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+.accordion__description{
+    margin-bottom: 16px;
+    color:#6C655B;
+    font-size: 20px;
+}
+
+.accordion__main_block details{
+    border-bottom: 1px solid #D8D2C8;
+    overflow: hidden;
+    padding: 28px 0;
+}
+
+.accordion__main_block details:first-child{
+    border-top: 1px solid #D8D2C8;
+}
+
+ summary::-webkit-details-marker {
+    display: none;
+}
+
+ summary{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+ details p{
+    padding-left: 48px;
+    color:#5D564D;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+details{
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+ details::details-content {
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+
+  details[open]::details-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+details summary::before {
+  content: attr(data-number);
+  color: #A19A90;
+  font-size: 12px;
+  margin-right: 35px;
+  display: inline-block;
+}
+
+details summary::after {
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12H19' stroke='%231F1F1F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 5V19' stroke='%231F1F1F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  font-size: 1em;
+  transition: transform 0.4s ease;
+  display:inline-block;
+  text-align: end;
+  position: absolute;
+  right: 0;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+@font-face {
+  font-family: 'IBM';
+  src: url('../fonts/IBMPlexSansBold.woff2');
+  font-weight: 700; 
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'IBM';
+  src: url('../fonts/IBMPlexSansMedium.woff2');
+  font-weight: 500; 
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'IBM';
+  src: url('../fonts/IBMPlexSansRegular.woff2');
+  font-weight: 400; 
+  font-style: normal; 
+}
